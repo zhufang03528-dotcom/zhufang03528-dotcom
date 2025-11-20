@@ -1,0 +1,7 @@
+{
+  "name": "晚餐吃甚麼？ (What's for Dinner?)",
+  "description": "An application that uses your current location to recommend nearby restaurants for dinner with the help of the Gemini API.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
