@@ -4,10 +4,11 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // 設定 base 為 './' 可以讓部署在 GitHub Pages 任何子路徑時都能正常運作
+  // 設定 base 為 './' 確保在 GitHub Pages 子路徑下資源路徑正確
   base: './',
   define: {
-    // 這行非常重要：它會在建置時將 process.env.API_KEY 替換為實際的 API Key 字串
+    // 將環境變數注入到前端程式碼中
+    // 在 GitHub Actions 中，process.env.API_KEY 會來自 secrets
     'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
   },
 });
